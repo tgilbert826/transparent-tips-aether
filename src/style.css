@@ -67,7 +67,7 @@ body {
   background-image: url('/topo_wave_background.svg');
   background-size: cover;
   background-position: center center;
-  opacity: 0.08; /* reduced from 0.85 to minimize visual noise and enhance premium aesthetic */
+  opacity: 0.85; /* restored to full opacity */
   pointer-events: none;
   transition: opacity 0.3s var(--ease);
 }
@@ -263,7 +263,7 @@ ul  { list-style: none; }
 
 .hero-watermark {
   position: absolute;
-  top: 85%;
+  top: 60%; /* shifted up to sit behind the gap between disclaimer and subtitle */
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-main);
@@ -327,7 +327,7 @@ ul  { list-style: none; }
 .hero-title {
   font-family: var(--font-main);
   font-weight: 800; /* standardized weight to 800 */
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem); /* reduced size by 30% */
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
@@ -346,25 +346,21 @@ ul  { list-style: none; }
   font-weight: 400;
   color: var(--text-secondary);
   max-width: 480px;
-  margin: 0 auto;
+  margin: 110px auto 0; /* pushed below the absolute watermark text */
   line-height: 1.75;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-disclaimer {
-  font-size: 0.82rem;
-  font-style: normal; /* removed italics for readability */
+  font-size: 0.85rem;
+  font-style: italic; /* restored italics */
   font-weight: 400;
   color: var(--text-secondary);
-  max-width: 540px;
-  margin: 16px auto 0;
+  opacity: 0.8;
+  max-width: 480px;
+  margin: 12px auto 0;
   line-height: 1.6;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  display: inline-block;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 
@@ -743,10 +739,6 @@ ul  { list-style: none; }
     padding: 0 16px;
   }
 
-  .site-bg-overlay {
-    opacity: 0.04; /* further reduced on mobile to eliminate background noise */
-  }
-
   .hero {
     min-height: auto; /* pull cards above the fold on mobile */
     padding-top: calc(var(--nav-height) + 24px);
@@ -754,12 +746,16 @@ ul  { list-style: none; }
   }
 
   .hero-title { 
-    font-size: clamp(2.2rem, 9vw, 3rem); 
+    font-size: clamp(1.54rem, 6.3vw, 2.24rem); /* reduced size by 30% */
     margin-bottom: 12px;
   }
 
   .hero-badge {
     margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    margin-top: 130px; /* taller stacked watermark on mobile */
   }
 
   .hero-content {
@@ -811,7 +807,6 @@ ul  { list-style: none; }
 
 @media (max-width: 400px) {
   .container { padding: 0 16px; }
-  .hero-title { font-size: 2rem; }
   .hero { padding-left: 16px; padding-right: 16px; }
 
   .logo-version {
