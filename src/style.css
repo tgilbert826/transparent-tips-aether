@@ -262,20 +262,21 @@ ul  { list-style: none; }
 }
 
 .hero-watermark {
-  position: absolute;
-  top: 75%; /* shifted down to sit below the title and disclaimer */
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-family: var(--font-main);
   font-weight: 800; /* standardized weight to 800 */
   font-size: clamp(4rem, 16vw, 14rem); /* adjusted min size for mobile scale */
   pointer-events: none;
   user-select: none;
-  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 0.85;
+  margin: 30px 0;
+  width: max-content;
+  max-width: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   
   /* Textured Metallic Gold Wash with built-in transparency */
   background: linear-gradient(
@@ -346,7 +347,7 @@ ul  { list-style: none; }
   font-weight: 400;
   color: var(--text-secondary);
   max-width: 480px;
-  margin: 110px auto 0; /* pushed below the absolute watermark text */
+  margin: 0 auto;
   line-height: 1.75;
   position: relative;
   z-index: 2;
@@ -389,17 +390,7 @@ ul  { list-style: none; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: border-color 0.35s var(--ease), background 0.35s var(--ease), box-shadow 0.35s var(--ease);
   will-change: transform;
-}
-
-.info-box:hover {
-  border-color: var(--accent-border);
-  background: rgba(10, 10, 16, 0.85);
-  box-shadow:
-    0 0 0 1px rgba(0, 168, 240, 0.06),
-    0 8px 48px rgba(0, 0, 0, 0.4),
-    0 0 80px rgba(0, 168, 240, 0.03);
 }
 
 /* Watermark number */
@@ -414,11 +405,6 @@ ul  { list-style: none; }
   color: rgba(255, 255, 255, 0.02);
   pointer-events: none;
   user-select: none;
-  transition: color 0.4s var(--ease);
-}
-
-.info-box:hover .box-number {
-  color: rgba(0, 168, 240, 0.05);
 }
 
 /* Box header */
@@ -458,12 +444,6 @@ ul  { list-style: none; }
   justify-content: center;
   background: var(--accent-subtle);
   border-radius: var(--radius-md);
-  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
-}
-
-.info-box:hover .box-icon {
-  background: rgba(0, 168, 240, 0.14);
-  box-shadow: 0 0 24px rgba(0, 168, 240, 0.12);
 }
 
 .box-label {
@@ -472,12 +452,6 @@ ul  { list-style: none; }
   letter-spacing: 0.04em; /* reduced letter spacing for readable text wrap */
   color: #fff;
   opacity: 0.95;
-  transition: opacity 0.3s var(--ease), color 0.3s var(--ease);
-}
-
-.info-box:hover .box-label {
-  opacity: 1;
-  color: var(--accent);
 }
 
 /* Box title */
@@ -507,15 +481,15 @@ ul  { list-style: none; }
 .market-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 4px;
+  margin-top: 8px;
 }
 
 .market-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  padding: 4px 0;
   background: transparent;
   border-radius: 0;
   border: none;
@@ -524,7 +498,7 @@ ul  { list-style: none; }
 .market-name {
   color: var(--text-primary);
   font-weight: 400; /* standardized weight to 400 */
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   flex: 1;
   min-width: 0;
   padding-right: 12px;
@@ -540,12 +514,12 @@ ul  { list-style: none; }
 .market-odds-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4px 14px;
+  padding: 4px 10px;
   border-radius: 100px;
-  height: 40px;
+  height: 34px;
   flex-shrink: 0;
   text-decoration: none;
   cursor: pointer;
@@ -564,7 +538,7 @@ ul  { list-style: none; }
 
 .odds-divider {
   width: 1px;
-  height: 14px;
+  height: 12px;
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -572,7 +546,7 @@ ul  { list-style: none; }
   color: #ffffff; /* pure white contrast, clean and flag-safe */
   font-family: var(--font-main);
   font-weight: 800; /* standardized weight to 800 */
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   letter-spacing: 0.01em;
   line-height: 1;
   text-align: center;
@@ -587,8 +561,8 @@ ul  { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   background: transparent;
   overflow: hidden;
@@ -647,22 +621,7 @@ ul  { list-style: none; }
   text-transform: uppercase;
 }
 
-/* Top-edge accent line on hover */
-.info-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 10%, var(--accent) 50%, transparent 90%);
-  opacity: 0;
-  transition: opacity 0.4s var(--ease);
-}
-
-.info-box:hover::before {
-  opacity: 0.5;
-}
+/* Top-edge accent line removed */
 
 /* Cursor-tracking glow (injected via JS) */
 .box-glow {
@@ -752,10 +711,6 @@ ul  { list-style: none; }
 
   .hero-badge {
     margin-bottom: 16px;
-  }
-
-  .hero-subtitle {
-    margin-top: 140px; /* taller stacked watermark on mobile, shifted down to clear overlap */
   }
 
   .hero-content {

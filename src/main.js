@@ -38,28 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
 
 
-  /* ---------- Box cursor-tracking glow ---------- */
-  const boxes = document.querySelectorAll('.info-box');
 
-  boxes.forEach((box) => {
-    // Inject glow element
-    const glow = document.createElement('div');
-    glow.classList.add('box-glow');
-    box.appendChild(glow);
-
-    box.addEventListener('mousemove', (e) => {
-      const rect = box.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      glow.style.left = x + 'px';
-      glow.style.top = y + 'px';
-      glow.style.opacity = '1';
-    });
-
-    box.addEventListener('mouseleave', () => {
-      glow.style.opacity = '0';
-    });
-  });
 
 });
