@@ -309,6 +309,17 @@ ul  { list-style: none; }
   line-height: 1.75;
 }
 
+.hero-disclaimer {
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-secondary);
+  opacity: 0.75;
+  max-width: 480px;
+  margin: 12px auto 0;
+  line-height: 1.6;
+}
+
 
 /* ===================================================
    INFO BOXES GRID — 3×2 layout
@@ -670,6 +681,10 @@ ul  { list-style: none; }
 @media (max-width: 768px) {
   :root { --nav-height: 64px; }
 
+  .nav-inner {
+    padding: 0 16px;
+  }
+
   .hero {
     padding-top: calc(var(--nav-height) + 48px);
     padding-bottom: 60px;
@@ -733,7 +748,7 @@ ul  { list-style: none; }
   .hero-title { font-size: 2rem; }
   .hero { padding-left: 16px; padding-right: 16px; }
 
-  .nav-socials {
+  .logo-version {
     display: none;
   }
 }
