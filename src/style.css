@@ -263,7 +263,7 @@ ul  { list-style: none; }
 
 .hero-watermark {
   position: absolute;
-  top: 60%; /* shifted up to sit behind the gap between disclaimer and subtitle */
+  top: 75%; /* shifted down to sit below the title and disclaimer */
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-main);
@@ -755,7 +755,7 @@ ul  { list-style: none; }
   }
 
   .hero-subtitle {
-    margin-top: 130px; /* taller stacked watermark on mobile */
+    margin-top: 140px; /* taller stacked watermark on mobile, shifted down to clear overlap */
   }
 
   .hero-content {
