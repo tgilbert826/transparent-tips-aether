@@ -67,8 +67,9 @@ body {
   background-image: url('/topo_wave_background.svg');
   background-size: cover;
   background-position: center center;
-  opacity: 0.85;
+  opacity: 0.08; /* reduced from 0.85 to minimize visual noise and enhance premium aesthetic */
   pointer-events: none;
+  transition: opacity 0.3s var(--ease);
 }
 
 a {
@@ -162,7 +163,7 @@ ul  { list-style: none; }
 
 .logo-text {
   font-family: var(--font-main);
-  font-weight: 700;
+  font-weight: 800; /* upgraded weight to 800 for stronger branding */
   font-size: 1.05rem;
   letter-spacing: 0.05em;
   position: relative;
@@ -206,7 +207,7 @@ ul  { list-style: none; }
 
 .status-text {
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600; /* standardized weight to 600 */
   letter-spacing: 0.18em;
   color: var(--accent);
 }
@@ -260,12 +261,41 @@ ul  { list-style: none; }
   margin-bottom: 72px;
 }
 
+.hero-watermark {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: clamp(6rem, 16vw, 15rem);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+  
+  /* Textured Metallic Gold Wash with built-in transparency */
+  background: linear-gradient(
+    110deg, 
+    rgba(255, 223, 115, 0.15) 0%, 
+    rgba(255, 255, 255, 0.25) 20%, 
+    rgba(212, 175, 55, 0.10) 40%, 
+    rgba(253, 224, 139, 0.18) 60%, 
+    rgba(138, 90, 25, 0.08) 80%,
+    rgba(212, 175, 55, 0.12) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600; /* standardized weight to 600 */
   letter-spacing: 0.18em;
   color: var(--accent);
   padding: 6px 18px;
@@ -285,7 +315,7 @@ ul  { list-style: none; }
 
 .hero-title {
   font-family: var(--font-main);
-  font-weight: 900;
+  font-weight: 800; /* standardized weight to 800 */
   font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -310,14 +340,30 @@ ul  { list-style: none; }
 }
 
 .hero-disclaimer {
-  font-size: 0.95rem;
-  font-style: italic;
+  font-size: 0.82rem;
+  font-style: normal; /* removed italics for readability */
   font-weight: 400;
   color: var(--text-secondary);
-  opacity: 0.75;
-  max-width: 480px;
-  margin: 12px auto 0;
+  max-width: 540px;
+  margin: 16px auto 0;
   line-height: 1.6;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-disclaimer .engine-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--accent-bright);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 
@@ -340,9 +386,9 @@ ul  { list-style: none; }
   backdrop-filter: blur(12px) saturate(1.1);
   -webkit-backdrop-filter: blur(12px) saturate(1.1);
   border: 1px solid var(--border);
-  border-radius: 0;
-  padding: 36px 30px 28px;
-  min-height: 380px;
+  border-radius: var(--radius-md); /* round corners for premium card design */
+  padding: 30px;
+  min-height: 320px; /* adjusted from 380px now that yellow line is removed */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -365,7 +411,7 @@ ul  { list-style: none; }
   top: 14px;
   right: 20px;
   font-family: var(--font-main);
-  font-weight: 900;
+  font-weight: 800; /* standardized weight to 800 */
   font-size: 3.5rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.02);
@@ -424,11 +470,11 @@ ul  { list-style: none; }
 }
 
 .box-label {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em; /* reduced letter spacing for readable text wrap */
   color: #fff;
-  opacity: 0.85;
+  opacity: 0.95;
   transition: opacity 0.3s var(--ease), color 0.3s var(--ease);
 }
 
@@ -437,37 +483,15 @@ ul  { list-style: none; }
   color: var(--accent);
 }
 
-/* Stat / prominent number */
-.box-stat {
-  font-family: var(--font-main);
-  font-weight: 900;
-  font-size: 2.2rem;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #fff;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.3s var(--ease);
-  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.info-box:hover .box-stat {
-  opacity: 0.8;
-}
-
 /* Box title */
 .box-title {
   font-family: var(--font-main);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
+  font-weight: 600; /* standardized weight to 600 */
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  color: var(--text-primary);
+  margin-bottom: 12px;
+  color: var(--text-secondary); /* muted color to establish better hierarchy vs team names */
   position: relative;
   z-index: 1;
 }
@@ -502,42 +526,75 @@ ul  { list-style: none; }
 
 .market-name {
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 400; /* standardized weight to 400 */
   font-size: 0.85rem;
   flex: 1;
   min-width: 0;
-}
-
-.market-odds {
-  color: #a8ffb5;
-  font-family: var(--font-main);
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: 0.03em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  line-height: 1;
-  width: 70px;
-  text-align: right;
-  flex-shrink: 0;
+  padding-right: 12px;
 }
 
 .market-value {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-shrink: 0;
+}
+
+/* Unified Interactive Odds Button (CTA) */
+.market-odds-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 14px;
+  border-radius: 100px;
+  height: 40px;
+  flex-shrink: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.market-odds-btn:hover {
+  background: rgba(0, 168, 240, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(0, 168, 240, 0.25);
+}
+
+.market-odds-btn:active {
+  transform: scale(0.96);
+}
+
+.odds-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.market-odds {
+  color: #ffffff; /* pure white contrast, clean and flag-safe */
+  font-family: var(--font-main);
+  font-weight: 800; /* standardized weight to 800 */
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-align: center;
+  transition: color 0.25s var(--ease);
+}
+
+.market-odds-btn:hover .market-odds {
+  color: var(--accent-bright);
 }
 
 .bookmaker-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   background: transparent;
   overflow: hidden;
-  border-radius: 4px;
 }
 
 .bookmaker-logo {
@@ -674,7 +731,7 @@ ul  { list-style: none; }
   }
 
   .info-box {
-    min-height: 260px;
+    min-height: auto; /* let cards adapt dynamically */
   }
 }
 
@@ -685,15 +742,27 @@ ul  { list-style: none; }
     padding: 0 16px;
   }
 
-  .hero {
-    padding-top: calc(var(--nav-height) + 48px);
-    padding-bottom: 60px;
+  .site-bg-overlay {
+    opacity: 0.04; /* further reduced on mobile to eliminate background noise */
   }
 
-  .hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+  .hero {
+    min-height: auto; /* pull cards above the fold on mobile */
+    padding-top: calc(var(--nav-height) + 24px);
+    padding-bottom: 40px;
+  }
+
+  .hero-title { 
+    font-size: clamp(2.2rem, 9vw, 3rem); 
+    margin-bottom: 12px;
+  }
+
+  .hero-badge {
+    margin-bottom: 16px;
+  }
 
   .hero-content {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 
   .info-grid {
@@ -703,16 +772,12 @@ ul  { list-style: none; }
   }
 
   .info-box {
-    min-height: 220px;
-    padding: 28px 22px 22px;
+    min-height: auto;
+    padding: 24px; /* perfectly symmetric padding on mobile */
   }
 
   .box-number {
-    font-size: 2.5rem;
-  }
-
-  .box-stat {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .nav-status {
