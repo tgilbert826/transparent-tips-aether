@@ -6,6 +6,7 @@
 
 /* ---------- Custom Properties ---------- */
 :root {
+  color-scheme: dark only;
   --bg-primary:     #000000;
   --bg-elevated:    #000000;
   --bg-card:        #0a0a10;
