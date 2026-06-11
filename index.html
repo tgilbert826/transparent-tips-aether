@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Tips Aether 1.0 | Daily Intelligence Dashboard</title>
+  <meta name="description" content="Transparent Tips Aether 1.0 — Your daily intelligence dashboard. Six curated data points, updated once per day.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Fixed topographic wave background -->
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">
+          <img src="/TransparentTipsLogo.png" alt="Transparent Tips Logo" class="main-logo-img">
+        </span>
+        <span class="logo-text">TRANSPARENT TIPS<span class="accent"> Aether 1.0</span></span>
+      </a>
+      <div class="nav-socials" id="nav-socials">
+        <a href="https://x.com" target="_blank" class="social-link" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://t.me" target="_blank" class="social-link" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.18-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.2 3.45-.49.34-.93.5-1.33.49-.44-.01-1.28-.25-1.9-.45-.77-.25-1.38-.38-1.33-.81.03-.22.34-.45.93-.69 3.63-1.58 6.05-2.63 7.27-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .33.02.48.13.12.09.16.21.17.33.01.07 0 .15-.01.25z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>
+          UPDATED DAILY
+        </div>
+        <h1 class="hero-title reveal">
+          TRANSPARENT TIPS<br><span class="accent">Aether 1.0</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Six key data points — clear, honest, and always transparent. Updated once per day.
+        </p>
+      </div>
+
+      <!-- ===================== INFO GRID ===================== -->
+      <div class="info-grid" id="info-grid">
+
+        <!-- Box 1 -->
+        <div class="info-box reveal" id="info-box-1">
+          <div class="box-number">01</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/ng.png" alt="Nigeria" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/cr.png" alt="Costa Rica" class="country-flag">
+            </div>
+            <span class="box-label">NIGERIA VS COSTA RICA</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Saka to be booked</span>
+              <div class="market-value">
+                <span class="market-odds">@ 1.5</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/bet365.png" alt="bet365" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Kane 1+ foul</span>
+              <div class="market-value">
+                <span class="market-odds">@ 2.4</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/skybet.png" alt="SkyBet" class="bookmaker-logo skybet-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Over 2.5 Goals</span>
+              <div class="market-value">
+                <span class="market-odds">@ 1.8</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/williamhill.webp" alt="William Hill" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="info-box reveal" id="info-box-2">
+          <div class="box-number">02</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/fr.png" alt="France" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/de.png" alt="Germany" class="country-flag">
+            </div>
+            <span class="box-label">FRANCE VS GERMANY</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Mbappe to score anytime</span>
+              <div class="market-value">
+                <span class="market-odds">@ 2.1</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/Paddypower.png" alt="PaddyPower" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Musiala 1+ shot on target</span>
+              <div class="market-value">
+                <span class="market-odds">@ 1.6</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/bet365.png" alt="bet365" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="info-box reveal" id="info-box-3">
+          <div class="box-number">03</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/br.png" alt="Brazil" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/ar.png" alt="Argentina" class="country-flag">
+            </div>
+            <span class="box-label">BRAZIL VS ARGENTINA</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Vinicius Jr anytime assist</span>
+              <div class="market-value">
+                <span class="market-odds">@ 3.0</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/williamhill.webp" alt="William Hill" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Both teams to score</span>
+              <div class="market-value">
+                <span class="market-odds">@ 1.9</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/skybet.png" alt="SkyBet" class="bookmaker-logo skybet-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="info-box reveal" id="info-box-4">
+          <div class="box-number">04</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/gb-eng.png" alt="England" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/es.png" alt="Spain" class="country-flag">
+            </div>
+            <span class="box-label">ENGLAND VS SPAIN</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Bellingham to be carded</span>
+              <div class="market-value">
+                <span class="market-odds">@ 3.2</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/bet365.png" alt="bet365" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Pedri 2+ tackles</span>
+              <div class="market-value">
+                <span class="market-odds">@ 2.1</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/Paddypower.png" alt="PaddyPower" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="info-box reveal" id="info-box-5">
+          <div class="box-number">05</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/pt.png" alt="Portugal" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/it.png" alt="Italy" class="country-flag">
+            </div>
+            <span class="box-label">PORTUGAL VS ITALY</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Ronaldo 2+ shots on target</span>
+              <div class="market-value">
+                <span class="market-odds">@ 2.8</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/skybet.png" alt="SkyBet" class="bookmaker-logo skybet-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Under 2.5 Goals</span>
+              <div class="market-value">
+                <span class="market-odds">@ 1.6</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/williamhill.webp" alt="William Hill" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="info-box reveal" id="info-box-6">
+          <div class="box-number">06</div>
+          <div class="box-header">
+            <div class="match-flags">
+              <img src="/src/assets/nl.png" alt="Netherlands" class="country-flag">
+              <span class="match-vs">VS</span>
+              <img src="/src/assets/hr.png" alt="Croatia" class="country-flag">
+            </div>
+            <span class="box-label">NETHERLANDS VS CROATIA</span>
+          </div>
+          <div class="box-stat">—</div>
+          <h3 class="box-title">Match Markets</h3>
+          <div class="box-content market-container">
+            <div class="market-item">
+              <span class="market-name">Gakpo anytime goalscorer</span>
+              <div class="market-value">
+                <span class="market-odds">@ 2.7</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/bet365.png" alt="bet365" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-name">Modric anytime assist</span>
+              <div class="market-value">
+                <span class="market-odds">@ 3.5</span>
+                <div class="bookmaker-logo-wrapper">
+                  <img src="/bookmakers/Paddypower.png" alt="PaddyPower" class="bookmaker-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <span class="box-timestamp">Last updated: —</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="nav-logo">
+          <span class="logo-text">TRANSPARENT TIPS<span class="accent"> Aether 1.0</span></span>
+        </a>
+        <p class="footer-tagline">Curated daily insights.<br>Built on transparency.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Transparent Tips Aether 1.0. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
