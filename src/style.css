@@ -12,11 +12,11 @@
   --bg-card-hover:  #0e0e18;
   --surface:        rgba(255, 255, 255, 0.02);
   --surface-hover:  rgba(255, 255, 255, 0.04);
-  --accent:         #00a8f0;
-  --accent-bright:  #3dc2ff;
-  --accent-subtle:  rgba(0, 168, 240, 0.08);
-  --accent-border:  rgba(0, 168, 240, 0.12);
-  --accent-glow:    rgba(0, 168, 240, 0.06);
+  --accent:         #39ff14;
+  --accent-bright:  #7bff4a;
+  --accent-subtle:  rgba(57, 255, 20, 0.08);
+  --accent-border:  rgba(57, 255, 20, 0.12);
+  --accent-glow:    rgba(57, 255, 20, 0.06);
   --text-primary:   #e8e8f0;
   --text-secondary: #7a7a96;
   --text-muted:     #4a4a62;
@@ -159,6 +159,12 @@ ul  { list-style: none; }
   border-radius: 6px;
 }
 
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .logo-icon { display: flex; }
 
 .logo-text {
@@ -223,12 +229,12 @@ ul  { list-style: none; }
    =================================================== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: calc(var(--nav-height) + 64px) 24px 100px;
+  padding: calc(var(--nav-height) + 40px) 24px 60px;
   overflow: hidden;
   z-index: 1;
 }
@@ -393,7 +399,7 @@ ul  { list-style: none; }
   will-change: transform;
 }
 
-/* Watermark number */
+/* Watermark number / Trophy */
 .box-number {
   position: absolute;
   top: 14px;
@@ -405,6 +411,17 @@ ul  { list-style: none; }
   color: rgba(255, 255, 255, 0.02);
   pointer-events: none;
   user-select: none;
+}
+
+.box-trophy {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 24px;
+  height: auto;
+  opacity: 0.50;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Box header */
@@ -514,22 +531,20 @@ ul  { list-style: none; }
 .market-odds-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4px 10px;
-  border-radius: 100px;
-  height: 34px;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  height: auto;
   flex-shrink: 0;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  transition: transform 0.25s var(--ease);
 }
 
 .market-odds-btn:hover {
-  background: rgba(0, 168, 240, 0.12);
-  border-color: var(--accent);
-  box-shadow: 0 0 16px rgba(0, 168, 240, 0.25);
+  transform: scale(1.05);
 }
 
 .market-odds-btn:active {
@@ -538,31 +553,32 @@ ul  { list-style: none; }
 
 .odds-divider {
   width: 1px;
-  height: 12px;
+  height: 16px;
   background: rgba(255, 255, 255, 0.15);
 }
 
 .market-odds {
-  color: #ffffff; /* pure white contrast, clean and flag-safe */
+  color: var(--accent);
   font-family: var(--font-main);
-  font-weight: 800; /* standardized weight to 800 */
-  font-size: 0.85rem;
-  letter-spacing: 0.01em;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-align: center;
-  transition: color 0.25s var(--ease);
+  transition: color 0.25s var(--ease), text-shadow 0.25s var(--ease);
 }
 
 .market-odds-btn:hover .market-odds {
   color: var(--accent-bright);
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .bookmaker-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
   background: transparent;
   overflow: hidden;
@@ -576,31 +592,71 @@ ul  { list-style: none; }
 }
 
 .skybet-logo {
-  transform: scale(1.4);
+  transform: scale(2.2);
+}
+
+/* Social Links Wrapper */
+.nav-socials-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.nav-socials-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socials-label {
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.socials-underline {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
+  border-radius: 1px;
 }
 
 /* Social Links */
 .nav-socials {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
   color: var(--text-primary);
-  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.social-link svg {
+  transform: scale(1.5);
 }
 
 .social-link:hover {
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-color: var(--accent-border);
+  box-shadow: 0 6px 16px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.2);
   transform: translateY(-2px);
 }
 

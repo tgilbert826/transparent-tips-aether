@@ -34,4 +34,6 @@ Use this mapping for URLs and Logos:
 
 4. **Insert and Save**: Append the newly formatted `<div class="market-item">` block directly inside the target `.market-container` in `index.html`.
 
+5. **Update Timestamp**: Whenever you add or update picks in a box, locate the corresponding `<span class="box-timestamp">` at the bottom of the `.info-box`. Update its text to reflect the exact current time (e.g., `Last updated: 14:30 EST`).
+
 *Ensure you use the exact HTML structure to keep the UI perfectly consistent.*
