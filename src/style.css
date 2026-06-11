@@ -754,6 +754,24 @@ ul  { list-style: none; }
     padding: 0 16px;
   }
 
+  .brand-logo {
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .nav-socials-wrapper {
+    gap: 0;
+    align-items: center;
+  }
+
+  .socials-label,
+  .socials-underline {
+    display: none;
+  }
+
   .hero {
     min-height: auto; /* pull cards above the fold on mobile */
     padding-top: calc(var(--nav-height) + 24px);
@@ -795,10 +813,13 @@ ul  { list-style: none; }
   .nav-socials {
     gap: 12px;
   }
-  
   .social-link {
     width: 32px;
     height: 32px;
+  }
+  
+  .social-link svg {
+    transform: scale(1);
   }
 
   .status-text {
